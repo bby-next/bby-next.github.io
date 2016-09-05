@@ -1,0 +1,120 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1,user-scalable=no">
+  <meta name="google-site-verification" content="imEdB0vy4NK8KEvU0y70TNOb6pq6pXLZUw7YGMPCbb8">
+
+  <title>Best Buy Canada</title>
+
+  <link rel="shortcut icon" sizes="32x32" href="/images/shop-icon-32.png">
+
+  <meta name="theme-color" content="#003b64">
+  <link rel="manifest" href="/manifest.json">
+
+  
+  <meta name="msapplication-TileColor" content="#003b64">
+
+  
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="Best Buy">
+  <link rel="icon" sizes="192x192" href="/images/touch/chrome-touch-icon-192x192.png">
+
+  
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Best Buy Canada">
+  <link rel="apple-touch-icon" href="images/touch/apple-touch-icon.png">
+
+  
+  <meta name="msapplication-TileImage" content="/images/touch/ms-touch-icon-144x144-precomposed.png">
+
+  <link rel="import" href="/src/shop-app.html" async="">
+
+  <style>
+
+    body {
+      margin: 0;
+      font-family: 'Open Sans', 'Roboto', 'Noto', 'Arial', sans-serif;
+      font-size: 13px;
+      line-height: 1.5;
+      min-height: 100vh;
+    }
+
+    /* styling for render while resources are loading */
+    shop-app[unresolved] {
+      display: block;
+      min-height: 101vh;
+      line-height: 68px;
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: 0.3em;
+      color: #202020;
+      padding: 0;
+      overflow: visible;
+    }
+
+    shop-app[unresolved] .header {
+      height: 64px;
+      background-color: rgba(0,59,100, 0.95);
+    }
+
+    shop-app[unresolved] img {
+      padding-left: 56px;
+      display: inline-block;
+      margin-top: 10px;
+      width: 64px;
+      height: 44px;
+    }
+
+    shop-app[unresolved] #tabContainer {
+      position: relative;
+      height: 66px;
+      text-align: center;
+    }
+
+    shop-app[unresolved] #tabContainer .loading-text {
+      display: inline-block;
+      outline: none;
+      padding: 9px 5px;
+      font-size: 13px;
+      font-weight: 500;
+      text-decoration: none;
+      color: #202020;
+    }
+
+    shop-app[unresolved] .item {
+      height: 450px;
+    }
+
+    shop-app[unresolved] .hero-image {
+      position: relative;
+      height: 320px;
+      overflow: hidden;
+      margin-bottom: 32px;
+    }
+
+  </style>
+
+</head>
+<body>
+
+  <shop-app unresolved="">
+    <div class="header">
+      <img src="/images/logo.svg" alt="Best Buy Canada">
+      <div class="logo"></div>
+    </div>
+    <div id="tabContainer">
+      <div class="loading-text">Best Buy Canada - Loading...</div>
+    </div>
+    <div class="item">
+      <div class="hero-image"></div>
+    </div>
+    <div class="item">
+      <div class="hero-image"></div>
+    </div>
+  </shop-app>
+
+  <script>window.performance&&performance.mark&&performance.mark("index.html"),Polymer={lazyRegister:!0,dom:"shadow"},function(){if("registerElement"in document&&"import"in document.createElement("link")&&"content"in document.createElement("template"));else{var e=document.createElement("script");e.src="/bower_components/webcomponentsjs/webcomponents-lite.min.js",document.body.appendChild(e)}}();</script>
+
+
+
+</body></html>
