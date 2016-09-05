@@ -83,7 +83,7 @@ function parse(e){for(var t,r=[],n=0,o=0,a="";null!=(t=PATH_REGEXP.exec(e));){va
 
 
 /* eslint-disable quotes, comma-spacing */
-var PrecacheConfig = [["/index.html","70f609339b269020686de93ff0d56429"],["/src/lazy-resources.html","0aa4113cc7382c1f23be5ccbdfc0362d"],["/src/shop-app.html","0d559072baa058b496d61e4581345af6"],["/src/shop-cart.html","68389e0ba4243d0875ce5c037e7fdd61"],["/src/shop-checkout.html","897bb287bf35dfdeca0a99a7efaafc8a"],["/src/shop-detail.html","b99581b627a51684e94b3f1ba12e0071"],["/src/shop-list.html","c0dec571fb914a49f9fe20791c91ae3e"]];
+var PrecacheConfig = [["/index.html","70f609339b269020686de93ff0d56429"],["/src/lazy-resources.html","0aa4113cc7382c1f23be5ccbdfc0362d"],["/src/shop-app.html","4b7b066bbee94d306675f2668510f721"],["/src/shop-cart.html","68389e0ba4243d0875ce5c037e7fdd61"],["/src/shop-checkout.html","897bb287bf35dfdeca0a99a7efaafc8a"],["/src/shop-detail.html","b99581b627a51684e94b3f1ba12e0071"],["/src/shop-list.html","c0dec571fb914a49f9fe20791c91ae3e"]];
 /* eslint-enable quotes, comma-spacing */
 var CacheNamePrefix = 'sw-precache-v1--' + (self.registration ? self.registration.scope : '') + '-';
 
