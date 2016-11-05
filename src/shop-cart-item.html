@@ -1,15 +1,24 @@
-<html><head><link rel="import" href="../bower_components/polymer/polymer.html">
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer.html">
 <link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
 <link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
 <link rel="import" href="shop-icons.html">
 <link rel="import" href="shop-image.html">
 <link rel="import" href="shop-select.html">
-
 <link rel="import" href="image-dimensions-behavior.html">
 
-</head><body><dom-module id="shop-cart-item">
+<dom-module id="shop-cart-item">
 
-  <template strip-whitespace="">
+  <template strip-whitespace>
 
     <style include="shop-select">
 
@@ -92,9 +101,6 @@
         @apply(--layout-horizontal);
         @apply(--layout-flex-auto);
         margin-left: 24px;
-        /*white-space: nowrap;*/
-        overflow: hidden;
-        text-overflow: ellipsis;
       }
 
       .detail {
@@ -161,18 +167,19 @@
 
     </style>
 
-    <a href$="/detail/[[entry.item.category]]/[[entry.item.sku]]" title$="[[entry.item.name]]">
+    <a href$="/detail/[[entry.category]]/[[entry.item.sku]]" title$="[[entry.item.name]]">
       <shop-image src="[[_imageAt75x75(entry.item.thumbnailImage)]]" alt="[[entry.item.name]]"></shop-image>
     </a>
     <div class="flex">
       <div class="name">
-        <a href$="/detail/[[entry.item.category]]/[[entry.item.sku]]">[[entry.item.name]]</a>
+        <a href$="/detail/[[entry.category]]/[[entry.item.sku]]">[[entry.item.name]]</a>
       </div>
       <div class="detail">
         <div class="quantity">
           <shop-select>
-            <label prefix="">Qty:</label>
-            <select id="quantitySelect" aria-label="Change quantity" value="[[entry.quantity]]" on-change="_quantityChange">
+            <label prefix>Qty:</label>
+            <select id="quantitySelect" aria-label="Change quantity" value="[[entry.quantity]]"
+                on-change="_quantityChange">
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -190,15 +197,55 @@
           </shop-select>
         </div>
         <div class="size">Size: <span>[[entry.size]]</span></div>
-        <div class="price">[[_formatPrice(entry.item.salePrice)]]</div>
+        <div class="price">[[_formatPrice(entry.item.price)]]</div>
 
-        
-        <paper-icon-button class="delete-button" icon="close" aria-label$="Delete item [[entry.item.title]]" on-click="_removeItem"></paper-icon-button>
+        <!--
+          Use on-click instead of on-tap to prevent the next cart item to be focused
+        -->
+        <paper-icon-button class="delete-button" icon="close" aria-label$="Delete item [[entry.item.title]]"
+            on-click="_removeItem"></paper-icon-button>
       </div>
     </div>
   </template>
 
-  <script>Polymer({is:"shop-cart-item",properties:{entry:Object},behaviors:[ImageDimensionsBehavior],_quantityChange:function(){this._setCartItem(parseInt(this.$.quantitySelect.value,10))},_setCartItem:function(t){this.fire("set-cart-item",{item:this.entry.item,quantity:t,size:this.entry.size})},_formatPrice:function(t){return t?"$"+t.toFixed(2):""},_removeItem:function(){this._setCartItem(0)}});</script>
+  <script>
+
+    Polymer({
+
+      is: 'shop-cart-item',
+
+      properties: {
+
+        entry: Object
+
+      },
+
+      behaviors:[
+        ImageDimensionsBehavior
+      ],
+
+      _quantityChange: function() {
+        this._setCartItem(parseInt(this.$.quantitySelect.value, 10));
+      },
+
+      _setCartItem: function(quantity) {
+        this.fire('set-cart-item', {
+          item: this.entry.item,
+          quantity: quantity,
+          size: this.entry.size
+        });
+      },
+
+      _formatPrice: function(price) {
+        return price ? '$' + price.toFixed(2) : '';
+      },
+
+      _removeItem: function() {
+        this._setCartItem(0);
+      }
+
+    });
+
+  </script>
 
 </dom-module>
-</body></html>

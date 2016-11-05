@@ -1,13 +1,13 @@
 {
-  "name": "bby-ecomm",
-  "version": "1.0",
+  "name": "shop",
+  "version": "1.1.0",
   "authors": [
     "The Polymer Authors"
   ],
   "private": true,
   "dependencies": {
-    "polymer": "polymer/polymer#^1.5.0",
-    "app-layout": "polymerelements/app-layout#^0.9.0",
+    "polymer": "polymer/polymer#^1.7.0",
+    "app-layout": "polymerelements/app-layout#^0.10.0",
     "app-route": "polymerelements/app-route#^0.9.1",
     "iron-flex-layout": "polymerelements/iron-flex-layout#^1.0.0",
     "iron-form": "polymerelements/iron-form#^1.0.0",
@@ -17,15 +17,12 @@
     "iron-media-query": "polymerelements/iron-media-query#^1.0.0",
     "iron-overlay-behavior": "polymerelements/iron-overlay-behavior#^1.0.0",
     "iron-pages": "polymerelements/iron-pages#^1.0.0",
-    "iron-swipeable-container": "polymerelements/iron-swipeable-container#^1.0.0",
     "iron-selector": "polymerelements/iron-selector#^1.0.0",
     "paper-icon-button": "polymerelements/paper-icon-button#^1.0.0",
-    "paper-tabs": "polymerelements/paper-tabs#^1.0.0",
     "paper-spinner": "polymerelements/paper-spinner#^1.0.0",
-    "paper-radio-group": "polymerelements/paper-radio-group#^1.0.0",
-    "paper-radio-button": "polymerelements/paper-radio-button#^1.0.0",
-    "paper-toggle-button": "polymerelements/paper-toggle-button#^1.0.0",
-    "app-localize-behavior": "PolymerElements/app-localize-behavior#^0.9.1"
+    "paper-toggle-button": "PolymerElements/paper-toggle-button#^1.2.1",
+    "app-localize-behavior": "PolymerElements/app-localize-behavior#^0.10.0",
+    "paper-tabs": "PolymerElements/paper-tabs#^1.7.0"
   },
   "devDependencies": {
     "web-component-tester": "^4.0.0"
