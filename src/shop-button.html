@@ -1,6 +1,16 @@
-<html><head><link rel="import" href="../bower_components/polymer/polymer.html">
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
 
-</head><body><dom-module id="shop-button">
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<dom-module id="shop-button">
   <template>
     <style>
 
@@ -11,11 +21,11 @@
       shop-button > * {
         display: inline-block;
         box-sizing: border-box;
-        border: 2px solid #cccccc;
+        border: 2px solid #000;
         background-color: #FFF;
         font-size: 14px;
         font-weight: 500;
-        color: #007fd8;
+        color: var(--app-primary-color);
         margin: 0;
         padding: 8px 44px;
         text-align: center;
@@ -24,24 +34,17 @@
         border-radius: 0;
         outline: none;
         -webkit-appearance: none;
-        transition: all 70ms cubic-bezier(0.4, 0, 0.2, 1);
-      }
-
-      shop-button > *:hover {
-        background-color: #003b64;
-        color: #FFF;
-        cursor: pointer;
       }
 
       shop-button > *:focus {
-        background-color: #003b64;
-        color: #FFF;
+        background-color: #c5cad3;
       }
 
       shop-button > *:active {
-        background-color: #003b64;
+        background-color: #000;
         color: #FFF;
       }
+
       @media (max-width: 767px) {
 
         /* Responsive buttons are used in shop-detail, shop-cart and shop-checkout */
@@ -52,19 +55,17 @@
         }
 
         shop-button[responsive] > * {
-          background: #fff200;
+          background-color: var(--app-accent-color);
           border: none;
-          color: #333;
+          color: white;
           padding: 20px;
           width: 100%;
           height: 100%;
-          font-size: 16px;
-          font-weight: bold;
-          font: 'Open Sans';
+          font-size: 15px;
         }
 
         shop-button[responsive] > *:focus {
-          background-color: #ffe000;
+          background-color: var(--app-accent-color);
         }
 
       }
@@ -72,4 +73,3 @@
     </style>
   </template>
 </dom-module>
-</body></html>

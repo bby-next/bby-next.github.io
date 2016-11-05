@@ -3,14 +3,13 @@ module.exports = {
     '/index.html',
     '/manifest.json',
     '/bower_components/webcomponentsjs/webcomponents-lite.min.js',
-    '/images'
+    '/images/*'
   ],
   navigateFallback: '/index.html',
   navigateFallbackWhitelist: [/^(?!.*\.html$|\/data\/).*/],
   runtimeCaching: [
     {
-      // urlPattern: /\/data\/images\/.*/,
-      urlPattern: /\/multimedia.bbycastatic.ca\/multimedia\//,
+      urlPattern: /\/data\/images\/.*/,
       handler: 'cacheFirst',
       options: {
         cache: {
@@ -20,17 +19,7 @@ module.exports = {
       }
     },
     {
-      urlPattern: /\/data\/categories\/.*json/,
-      handler: 'fastest',
-      options: {
-        cache: {
-          maxEntries: 100,
-          name: 'data-cache'
-        }
-      }
-    },
-    {
-      urlPattern: /\/data\/i18n\/.*json/,
+      urlPattern: /\/data\/.*json/,
       handler: 'fastest',
       options: {
         cache: {

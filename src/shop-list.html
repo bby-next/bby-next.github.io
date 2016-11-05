@@ -1,54 +1,22 @@
-<html><head><meta charset="UTF-8"><link rel="import" href="shop-app.html"></head><body><div hidden="" by-vulcanize=""><dom-module id="shop-list-item" assetpath="/">
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
 
-  <template>
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/app-route/app-route.html">
+<link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="shop-category-data.html">
+<link rel="import" href="shop-common-styles.html">
+<link rel="import" href="shop-image.html">
+<link rel="import" href="shop-list-item.html">
 
-    <style>
-
-      :host {
-        @apply(--layout-vertical);
-        @apply(--layout-center-justified);
-        text-align: center;
-        margin: 0 48px;
-      }
-
-      shop-image {
-        margin: 32px 0 16px;
-      }
-
-      shop-image::before {
-        content: "";
-        display: block;
-        padding-top: 100%;
-      }
-
-      .title {
-        color: var(--app-primary-color);
-        font-weight: bold;
-      }
-
-      .price {
-        color: var(--app-secondary-color);
-      }
-
-      @media (max-width: 767px) {
-        :host {
-          margin: 0 12px;
-        }
-      }
-
-    </style>
-
-    <shop-image src="[[_imageAt400x400(item.thumbnailImage)]]" alt="[[item.name]]"></shop-image>
-    <div class="title">[[item.name]]</div>
-    <span class="price">[[_formatPrice(item.salePrice)]]</span>
-    <shop-rating rating="[[item.customerRating]]" total-ratings="[[item.customerRatingCount]]"></shop-rating>
-
-  </template>
-
-  <script>Polymer({is:"shop-list-item",properties:{item:Object},behaviors:[ImageDimensionsBehavior],_formatPrice:function(e){return e?"$"+e.toFixed(2):""}});</script>
-
-</dom-module>
-</div><dom-module id="shop-list">
+<dom-module id="shop-list">
 
   <template>
 
@@ -77,14 +45,20 @@
         @apply(--layout-wrap);
         @apply(--layout-justified);
         margin: 0 10px 32px 10px;
+        padding: 0;
+        list-style: none;
       }
 
-      .grid > a {
+      .grid li {
         -webkit-flex: 1 1;
         flex: 1 1;
         -webkit-flex-basis: 33%;
         flex-basis: 33%;
         max-width: 33%;
+      }
+
+      .grid a {
+        display:block;
         text-decoration: none;
       }
 
@@ -93,7 +67,7 @@
           display: none;
         }
 
-        .grid > a {
+        .grid  li {
           -webkit-flex-basis: 50%;
           flex-basis: 50%;
           max-width: 50%;
@@ -102,33 +76,124 @@
 
     </style>
 
-    
-    <app-route route="[[route]]" pattern="/:category" data="{{routeData}}"></app-route>
+    <!--
+      app-route provides the name of the category.
+    -->
+    <app-route
+        route="[[route]]"
+        pattern="/:category"
+        data="{{routeData}}"></app-route>
 
-    
-    <shop-category-data id="categoryData" category-name="[[routeData.category]]" category="{{category}}" failure="{{failure}}"></shop-category-data>
+    <!--
+      shop-category-data provides the category data for a given category name.
+    -->
+    <shop-category-data
+        id="categoryData"
+        category-name="[[routeData.category]]"
+        category="{{category}}"
+        failure="{{failure}}"></shop-category-data>
 
-    <shop-image alt="[[category.title]]" src="[[category.image]]" placeholder-img="[[category.placeholder]]" class="hero-image"></shop-image>
+    <shop-image
+        alt="[[category.title]]"
+        src="[[category.image]]"
+        placeholder-img="[[category.placeholder]]" class="hero-image"></shop-image>
 
     <header>
       <h1>[[category.title]]</h1>
       <span>[[_getPluralizedQuantity(category.items.length)]]</span>
     </header>
 
-    <div class="grid" hidden$="[[failure]]">
+    <ul class="grid" hidden$="[[failure]]">
       <template is="dom-repeat" items="[[_getListItems(category.items)]]" initial-count="4">
-        <a href$="[[_getItemHref(item)]]">
-          <shop-list-item item="[[item]]"></shop-list-item>
-        </a>
+        <li>
+          <a href$="[[_getItemHref(item)]]"><shop-list-item item="[[item]]"></shop-list-item></a>
+        </li>
       </template>
-    </div>
+    </ul>
 
-    
-    <shop-network-warning hidden$="[[!failure]]" offline="[[offline]]" on-try-reconnect="_tryReconnect"></shop-network-warning>
+    <!--
+      shop-network-warning shows a warning message when the items can't be rendered due
+      to network conditions.
+    -->
+    <shop-network-warning
+        hidden$="[[!failure]]"
+        offline="[[offline]]"
+        on-try-reconnect="_tryReconnect"></shop-network-warning>
 
   </template>
 
-  <script>Polymer({is:"shop-list",properties:{category:Object,route:Object,routeData:Object,visible:Boolean,offline:{type:Boolean,observer:"_offlineChanged"},failure:Boolean},observers:["_categoryChanged(category, visible)"],_getListItems:function(e){return e||[{},{},{},{},{},{},{},{},{},{}]},_getItemHref:function(e){return e.sku?["/detail",this.category.name,e.sku].join("/"):null},_getPluralizedQuantity:function(e){if(!e)return"";var t=1===e?"item":"items";return"("+e+" "+t+")"},_categoryChanged:function(e,t){t&&this.debounce("change-section",function(){this.fire("change-section",{category:e.name,title:e.title})})},_tryReconnect:function(){this.$.categoryData.refresh()},_offlineChanged:function(e){e||this._tryReconnect()}});</script>
+  <script>
+
+    Polymer({
+
+      is: 'shop-list',
+
+      properties: {
+
+        category: Object,
+
+        route: Object,
+
+        routeData: Object,
+
+        visible: Boolean,
+
+        offline: {
+          type: Boolean,
+          observer: '_offlineChanged'
+        },
+
+        failure: Boolean
+
+      },
+
+      observers: [
+        '_categoryChanged(category, visible)'
+      ],
+
+      _getListItems: function(items) {
+        // Return placeholder items when the items haven't loaded yet.
+        return items || [{},{},{},{},{},{},{},{},{},{}];
+      },
+
+      _getItemHref: function(item) {
+        // By returning null when `itemId` is undefined, the href attribute won't be set and
+        // the link will be disabled.
+        return item.name ? ['/detail', this.category.name, item.sku].join('/') : null;
+      },
+
+      _getPluralizedQuantity: function(quantity) {
+        if (!quantity) {
+          return '';
+        }
+        var pluralizedQ = quantity === 1 ? 'item' : 'items';
+        return  '(' + quantity + ' ' + pluralizedQ + ')';
+      },
+
+      _categoryChanged: function(category, visible) {
+        if (visible) {
+          this.debounce('change-section', function() {
+            // Notify the category and the page's title
+            this.fire('change-section', {
+              category: category.name,
+              title: category.title
+            });
+          });
+        }
+      },
+
+      _tryReconnect: function() {
+        this.$.categoryData.refresh();
+      },
+
+      _offlineChanged: function(offline) {
+        if (!offline) {
+          this._tryReconnect();
+        }
+      }
+
+    });
+
+  </script>
 
 </dom-module>
-</body></html>

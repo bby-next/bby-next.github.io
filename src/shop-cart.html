@@ -1,4 +1,19 @@
-<html><head><meta charset="UTF-8"><link rel="import" href="shop-app.html"></head><body><dom-module id="shop-cart">
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="shop-button.html">
+<link rel="import" href="shop-common-styles.html">
+<link rel="import" href="shop-form-styles.html">
+
+<dom-module id="shop-cart">
 
   <template>
 
@@ -43,9 +58,9 @@
           </template>
         </div>
         <div class="checkout-box">
-          + Total: <span class="subtotal">[[_formatTotal(total)]]</span>
-          <shop-button responsive="">
-            <input type="button" on-click="_checkout" value="Checkout">
+          Total: <span class="subtotal">[[_formatTotal(total)]]</span>
+          <shop-button responsive>
+            <a href="/checkout">Checkout</a>
           </shop-button>
         </div>
       </div>
@@ -53,7 +68,51 @@
 
   </template>
 
-  <script>Polymer({is:"shop-cart",properties:{total:Number,cart:Array,visible:{type:Boolean,observer:"_visibleChanged"},_hasItems:{type:Boolean,computed:"_computeHasItem(cart.length)"}},_checkout:function(){this.fire("buy-cart")},_formatTotal:function(t){return isNaN(t)?"":"$"+t.toFixed(2)},_computeHasItem:function(t){return t>0},_getPluralizedQuantity:function(t){return t+" "+(1===t?"item":"items")},_visibleChanged:function(t){t&&this.fire("change-section",{title:"Your cart"})}});</script>
+  <script>
+
+    Polymer({
+
+      is: 'shop-cart',
+
+      properties: {
+
+        total: Number,
+
+        cart: Array,
+
+        visible: {
+          type: Boolean,
+          observer: '_visibleChanged'
+        },
+
+        _hasItems: {
+          type: Boolean,
+          computed: '_computeHasItem(cart.length)'
+        }
+
+      },
+
+      _formatTotal: function(total) {
+        return isNaN(total) ? '' : '$' + total.toFixed(2);
+      },
+
+      _computeHasItem: function(cartLength) {
+        return cartLength > 0;
+      },
+
+      _getPluralizedQuantity: function(quantity) {
+        return quantity + ' ' + (quantity === 1 ? 'item' : 'items');
+      },
+
+      _visibleChanged: function(visible) {
+        if (visible) {
+          // Notify the section's title
+          this.fire('change-section', { title: 'Your cart' });
+        }
+      }
+
+    });
+
+  </script>
 
 </dom-module>
-</body></html>
