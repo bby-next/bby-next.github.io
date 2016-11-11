@@ -32,7 +32,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       :host {
         display: block;
         position: relative;
-        padding-top: 130px;
+        /*padding-top: 130px;*/
         padding-bottom: 64px;
         min-height: 100vh;
         --app-primary-color: #202020;
@@ -44,6 +44,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         --paper-spinner-color: var(--app-accent-color);
         -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
         color: var(--app-primary-color);
+      }
+
+      * {
+        -webkit-tap-highlight-color: transparent;
+        font-family: 'Avenir Next', 'Open Sans', 'Roboto', Arial;
+        font-weight: 500;
+        -webkit-user-select: none;  /* Chrome all / Safari all */
+        -moz-user-select: none;     /* Firefox all */
+        -ms-user-select: none;      /* IE 10+ */
+        user-select: none;          /* Likely future */
       }
 
       app-header {
@@ -235,7 +245,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       /* small screen */
       @media (max-width: 767px) {
         :host {
-          padding-top: 64px;
+          /*padding-top: 64px;*/
         }
 
         .menu-btn {
@@ -277,51 +287,51 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         num-items="{{numItems}}"
         total="{{total}}"></shop-cart-data>
 
-    <app-header role="navigation" id="header" effects="waterfall" condenses reveals>
-      <app-toolbar>
-        <div class="left-bar-item">
-          <paper-icon-button
-              class="menu-btn"
-              icon="menu"
-              on-click="_toggleDrawer"
-              aria-label="Categories">
-          </paper-icon-button>
-          <a class="back-btn" href="/list/[[categoryName]]" tabindex="-1">
-            <paper-icon-button icon="arrow-back" aria-label="Go back"></paper-icon-button>
-          </a>
-        </div>
+    <!--<app-header role="navigation" id="header" effects="waterfall" condenses reveals>-->
+      <!--<app-toolbar>-->
+        <!--<div class="left-bar-item">-->
+          <!--<paper-icon-button-->
+              <!--class="menu-btn"-->
+              <!--icon="menu"-->
+              <!--on-click="_toggleDrawer"-->
+              <!--aria-label="Categories">-->
+          <!--</paper-icon-button>-->
+          <!--<a class="back-btn" href="/list/[[categoryName]]" tabindex="-1">-->
+            <!--<paper-icon-button icon="arrow-back" aria-label="Go back"></paper-icon-button>-->
+          <!--</a>-->
+        <!--</div>-->
 
-        <div class="logo" title="">
-          <a href="/" aria-label="Best Buy Canada Home">
-            <img src="/images/logo.svg" height="44" alt="Best Buy Canada">
-          </a>
-        </div>
+        <!--<div class="logo" title="">-->
+          <!--<a href="/" aria-label="Best Buy Canada Home">-->
+            <!--<img src="/images/logo.svg" height="44" alt="Best Buy Canada">-->
+          <!--</a>-->
+        <!--</div>-->
 
-        <div class="right-bar-item">
-          <paper-toggle-button on-change="_toggleLang" id="switch">EN / FR</paper-toggle-button>
+        <!--<div class="right-bar-item">-->
+          <!--<paper-toggle-button on-change="_toggleLang" id="switch">EN / FR</paper-toggle-button>-->
 
-          <div class="cart-btn-container">
-            <a href="/cart" tabindex="-1">
-              <paper-icon-button icon="shopping-cart" aria-label$="Shopping cart: [[_computePluralizedQuantity(numItems)]]"></paper-icon-button>
-            </a>
-            <div class="cart-badge" aria-hidden="true" hidden$="[[!numItems]]">[[numItems]]</div>
-          </div>
-        </div>
-      </app-toolbar>
+          <!--<div class="cart-btn-container">-->
+            <!--<a href="/cart" tabindex="-1">-->
+              <!--<paper-icon-button icon="shopping-cart" aria-label$="Shopping cart: [[_computePluralizedQuantity(numItems)]]"></paper-icon-button>-->
+            <!--</a>-->
+            <!--<div class="cart-badge" aria-hidden="true" hidden$="[[!numItems]]">[[numItems]]</div>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</app-toolbar>-->
 
-      <!-- Lazy-create the tabs for larger screen sizes. -->
-      <div id="tabContainer" sticky$="[[_shouldShowTabs]]" hidden$="[[!_shouldShowTabs]]">
-        <template is="dom-if" if="[[_shouldRenderTabs]]">
-          <paper-tabs selected="[[categoryName]]" attr-for-selected="name" scrollable noink>
-            <template is="dom-repeat" items="[[categories]]" as="category" initial-count="4">
-            <paper-tab name="[[category.name]]">
-                  <a href="/list/[[category.name]]">{{localize(category.name)}}</a>
-                </paper-tab>
-              </template>
-          </paper-tabs>
-        </template>
-      </div>
-    </app-header>
+      <!--&lt;!&ndash; Lazy-create the tabs for larger screen sizes. &ndash;&gt;-->
+      <!--<div id="tabContainer" sticky$="[[_shouldShowTabs]]" hidden$="[[!_shouldShowTabs]]">-->
+        <!--<template is="dom-if" if="[[_shouldRenderTabs]]">-->
+          <!--<paper-tabs selected="[[categoryName]]" attr-for-selected="name" scrollable noink>-->
+            <!--<template is="dom-repeat" items="[[categories]]" as="category" initial-count="4">-->
+            <!--<paper-tab name="[[category.name]]">-->
+                  <!--<a href="/list/[[category.name]]">{{localize(category.name)}}</a>-->
+                <!--</paper-tab>-->
+              <!--</template>-->
+          <!--</paper-tabs>-->
+        <!--</template>-->
+      <!--</div>-->
+    <!--</app-header>-->
 
     <!-- Lazy-create the drawer for small screen sizes. -->
     <template is="dom-if" if="[[_shouldRenderDrawer]]">
@@ -347,12 +357,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <!-- checkout view -->
       <shop-checkout name="checkout" cart="[[cart]]" total="[[total]]" route="{{subroute}}"></shop-checkout>
     </iron-pages>
-
-    <footer>
-      <a href="https://www.polymer-project.org/1.0/toolbox/">Made by Polymer</a>
-      <div class="demo-label">Demo Only</div>
-    </footer>
-
+    
     <!-- a11y announcer -->
     <div class="announcer" aria-live="assertive">[[_a11yLabel]]</div>
 
