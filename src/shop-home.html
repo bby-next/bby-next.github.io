@@ -53,8 +53,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       .item:nth-of-type(3),
       .item:nth-of-type(4) {
-        display: inline-block;
-        width: 50%;
+        /*display: inline-block;*/
+        /*width: 50%;*/
       }
 
       shop-image {
@@ -79,7 +79,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       .item:nth-of-type(3) > h2,
       .item:nth-of-type(4) > h2 {
-        font-size: 1.1em;
+        /*font-size: 1.1em;*/
       }
 
       @media (max-width: 767px) {
@@ -93,7 +93,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
         .item:nth-of-type(3) > shop-button > a,
         .item:nth-of-type(4) > shop-button > a {
-          padding: 8px 24px;
+          /*padding: 8px 24px;*/
         }
       }
 
@@ -101,12 +101,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     <template is="dom-repeat" items="[[categories]]" strip-whitespace>
       <div class="item">
-        <a class="image-link" href$="/list/[[item.name]]">
-          <shop-image src="[[item.image]]" alt="[[item.title]]" placeholder-img="[[item.placeholder]]"></shop-image>
-        </a>
-        <h2>[[item.title]]</h2>
+        <!--<a class="image-link" href$="/list/[[item.name]]">-->
+          <shop-image data-type="search" data-action="[[item.title]]" on-tap="tappedItem"
+                      src="[[item.image]]" alt="[[item.title]]" placeholder-img="[[item.placeholder]]"></shop-image>
         <shop-button>
-          <a aria-label$="[[item.title]] Shop Now" href$="/list/[[item.name]]">Shop Now</a>
+          <h2 alt="[[item.title]]" data-type="search" on-tap="tappedItem">Shop [[item.title]]</h2>
         </shop-button>
       </div>
     </template>
@@ -121,6 +120,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       properties: {
 
+        appActionType: {
+          type: String,
+          value: 'pdp'
+        },
+
+        appActionData: {
+          type: String,
+          value: 'tvs'
+        },
+
         categories: {
           type: Array
         },
@@ -130,6 +139,38 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           observer: '_visibleChanged'
         }
 
+      },
+
+      behaviors: [
+        Polymer.AppLocalizeBehavior
+      ],
+
+      observers: [
+        'onQueryChange(query)'
+      ],
+
+      tappedItem: function(e) {
+        var appActionData = Polymer.dom(e).localTarget.alt;
+        var appActionType = Polymer.dom(e).localTarget.getAttribute('data-type');
+
+        try {
+          webkit.messageHandlers.messageReciever.postMessage({
+            actionType: appActionType,
+            actionData: appActionData
+          });
+        }
+        catch(err) {
+          console.log('The native context does not exist yet:\nType: "'+ appActionType + '", Data: "' + appActionData + '"');
+        }
+      },
+
+      onQueryChange: function(newValue, oldValue) {
+        var langQueryString = newValue.split("lang=")[1] ? newValue.split("lang=")[1].split("&")[0] : this.language;
+
+        // Get lang query string of url
+        if(langQueryString === 'en' || langQueryString === 'fr') {
+          this.language = langQueryString;
+        }
       },
 
       _visibleChanged: function(visible) {

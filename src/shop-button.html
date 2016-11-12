@@ -21,27 +21,29 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       shop-button > * {
         display: inline-block;
         box-sizing: border-box;
-        border: 2px solid #000;
-        background-color: #FFF;
+        /*border: 1px solid #007FD8;*/
+        /*background-color: #FEDD31;*/
         font-size: 14px;
-        font-weight: 500;
         color: var(--app-primary-color);
         margin: 0;
         padding: 8px 44px;
         text-align: center;
         text-decoration: none;
-        text-transform: uppercase;
-        border-radius: 0;
+        /*text-transform: uppercase;*/
+        border-radius: 3px;
         outline: none;
         -webkit-appearance: none;
+        min-height: 32px;
       }
 
       shop-button > *:focus {
-        background-color: #c5cad3;
+        /*border-color: var(--app-secondary-color);*/
+        background-color: var(--app-secondary-color);
       }
 
       shop-button > *:active {
-        background-color: #000;
+        /*border-color: var(--app-secondary-color);*/
+        background-color: var(--app-secondary-color);
         color: #FFF;
       }
 

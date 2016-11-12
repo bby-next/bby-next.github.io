@@ -36,7 +36,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         padding-bottom: 64px;
         min-height: 100vh;
         --app-primary-color: #202020;
-        --app-secondary-color: #757575;
+        --app-secondary-color: #053872;
         --app-accent-color: #172C50;
         --app-badge-color: #f44336;
         --paper-button-ink-color: var(--app-accent-color);
@@ -357,7 +357,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <!-- checkout view -->
       <shop-checkout name="checkout" cart="[[cart]]" total="[[total]]" route="{{subroute}}"></shop-checkout>
     </iron-pages>
-    
+
     <!-- a11y announcer -->
     <div class="announcer" aria-live="assertive">[[_a11yLabel]]</div>
 
@@ -520,7 +520,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         this.categoryName = detail.category || '';
         // Announce the page's title
         if (detail.title) {
-          document.title = detail.title + ' - SHOP';
+          document.title = detail.title + ' - Best Buy Canada';
           this._announce(detail.title + ', loaded');
         }
       },
