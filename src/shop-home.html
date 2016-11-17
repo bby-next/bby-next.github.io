@@ -18,6 +18,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     <style include="shop-button">
 
+      * {
+        -webkit-tap-highlight-color: transparent;
+        font-family: 'Avenir Next', 'Open Sans', 'Roboto', Arial;
+        font-weight: 500;
+        -webkit-user-select: none;  /* Chrome all / Safari all */
+        -moz-user-select: none;     /* Firefox all */
+        -ms-user-select: none;      /* IE 10+ */
+        user-select: none;          /* Likely future */
+      }
+
       .image-link {
         outline: none;
       }
@@ -58,6 +68,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       }
 
       shop-image {
+        cursor: pointer;
         position: relative;
         height: 320px;
         overflow: hidden;
@@ -72,6 +83,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       }
 
       h2 {
+        cursor: pointer;
         font-size: 1.3em;
         font-weight: 500;
         margin: 32px 0;
@@ -97,11 +109,65 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         }
       }
 
+      iron-swipeable-pages {
+        height: 300px;
+        width: 100vw;
+        @apply(--layout-flex);
+      }
+
+      iron-swipeable-pages > * {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        cursor: pointer;
+      }
+
+      .container {
+        overflow-x: scroll;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+        margin-top: -18px;
+        padding-left: 8px;
+        padding-right: 8px;
+      }
+      .container img {
+        margin: 10px 2px 2px 2px;
+        border: 1px solid rgba(0,0,0,0.1);
+        border-radius: 2px;
+        width:110px;
+        height:80px;
+        background-color: #ffffff;
+      }
+
     </style>
 
+    <!--<div class="container">-->
+    <iron-swipeable-pages id="ironCarousel" selected="0" height="300px" width="100%">
+      <shop-image  data-type="search" src="/images/promos/save-on-tvs2.jpg" placeholderImg="/images/promos/save-on-tvs2-small.jpg" on-tap="tappedItem" alt="deals"></shop-image>
+      <shop-image  data-type="search" src="/images/promos/save-on-tvs.jpg" placeholderImg="/images/promos/save-on-tvs-small.jpg" on-tap="tappedItem" alt="deals"></shop-image>
+    </iron-swipeable-pages>
+      <!--<shop-image  data-type="search" sizing="contain" preload fade src="/images/promos/save-on-tvs.jpg" on-tap="tappedItem" alt="deals"></shop-image>-->
+      <!--<shop-image  data-type="search" sizing="contain" preload fade src="{{localize('slice2')}}" on-tap="tappedItem" alt="gifts"></shop-image>-->
+      <!--<shop-image  data-type="search" sizing="contain" preload fade src="{{localize('slice3')}}" on-tap="tappedItem" alt="outlet"></shop-image>-->
+      <!--<shop-image  data-type="web" sizing="contain" preload fade src="{{localize('slice4')}}" on-tap="tappedItem" alt="{{localize('flyer')}}"></shop-image>-->
+      <!--<shop-image  data-type="web" sizing="contain" preload fade src="{{localize('slice5')}}" on-tap="tappedItem" alt="{{localize('blog')}}"></shop-image>-->
+    <!--</div>-->
+
+    <!--<h2>Promo</h2>-->
+
+    <!--<div class="container">-->
+      <!--<img  data-type="search" src="/images/promos/slice1-en.png" alt="deals">-->
+      <!--<img  data-type="search" src="/images/promos/slice2-en.png" alt="deals">-->
+      <!--<img  data-type="search" src="/images/promos/slice2-en.png" alt="deals">-->
+      <!--<img  data-type="search" src="/images/promos/slice2-en.png" alt="deals">-->
+      <!--<img  data-type="search" src="/images/promos/slice2-en.png" alt="deals">-->
+      <!--<img  data-type="search" src="/images/promos/slice2-en.png" alt="deals">-->
+      <!--<img  data-type="search" src="/images/promos/slice2-en.png" alt="deals">-->
+    <!--</div>-->
+    <!--<iron-swipeable-pages id="ironCarousel" selected="0">-->
     <template is="dom-repeat" items="[[categories]]" strip-whitespace>
       <div class="item">
-        <!--<a class="image-link" href$="/list/[[item.name]]">-->
           <shop-image data-type="search" data-action="[[item.title]]" on-tap="tappedItem"
                       src="[[item.image]]" alt="[[item.title]]" placeholder-img="[[item.placeholder]]"></shop-image>
         <shop-button>
@@ -109,6 +175,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         </shop-button>
       </div>
     </template>
+    <!--</iron-swipeable-pages>-->
 
   </template>
 

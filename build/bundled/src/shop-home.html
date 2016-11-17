@@ -1,0 +1,174 @@
+<html><head><link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="shop-button.html">
+<link rel="import" href="shop-image.html">
+
+</head><body><dom-module id="shop-home">
+
+  <template>
+
+    <style include="shop-button">
+
+      * {
+        -webkit-tap-highlight-color: transparent;
+        font-family: 'Avenir Next', 'Open Sans', 'Roboto', Arial;
+        font-weight: 500;
+        -webkit-user-select: none;  /* Chrome all / Safari all */
+        -moz-user-select: none;     /* Firefox all */
+        -ms-user-select: none;      /* IE 10+ */
+        user-select: none;          /* Likely future */
+      }
+
+      .image-link {
+        outline: none;
+      }
+
+      .image-link > shop-image::after {
+        display: block;
+        content: '';
+        position: absolute;
+        transition-property: opacity;
+        transition-duration: 0s;
+        transition-delay: 90ms;
+        pointer-events: none;
+        opacity: 0;
+        top: 5px;
+        left: 5px;
+        right: 5px;
+        bottom: 5px;
+        outline: #2196F3 auto 5px;
+        outline: -moz-mac-focusring auto 5px;
+        outline: -webkit-focus-ring-color auto 5px;
+      }
+
+      .image-link:focus > shop-image::after {
+        opacity: 1;
+      }
+
+      .item {
+        display: block;
+        text-decoration: none;
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      .item:nth-of-type(3),
+      .item:nth-of-type(4) {
+        /*display: inline-block;*/
+        /*width: 50%;*/
+      }
+
+      shop-image {
+        cursor: pointer;
+        position: relative;
+        height: 320px;
+        overflow: hidden;
+        --shop-image-img: {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: -9999px;
+          right: -9999px;
+          max-width: none;
+        };
+      }
+
+      h2 {
+        cursor: pointer;
+        font-size: 1.3em;
+        font-weight: 500;
+        margin: 32px 0;
+      }
+
+      .item:nth-of-type(3) > h2,
+      .item:nth-of-type(4) > h2 {
+        /*font-size: 1.1em;*/
+      }
+
+      @media (max-width: 767px) {
+        shop-image {
+          height: 240px;
+        }
+
+        h2 {
+          margin: 24px 0;
+        }
+
+        .item:nth-of-type(3) > shop-button > a,
+        .item:nth-of-type(4) > shop-button > a {
+          /*padding: 8px 24px;*/
+        }
+      }
+
+      iron-swipeable-pages {
+        height: 300px;
+        width: 100vw;
+        @apply(--layout-flex);
+      }
+
+      iron-swipeable-pages > * {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        cursor: pointer;
+      }
+
+      .container {
+        overflow-x: scroll;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+        margin-top: -18px;
+        padding-left: 8px;
+        padding-right: 8px;
+      }
+      .container img {
+        margin: 10px 2px 2px 2px;
+        border: 1px solid rgba(0,0,0,0.1);
+        border-radius: 2px;
+        width:110px;
+        height:80px;
+        background-color: #ffffff;
+      }
+
+    </style>
+
+    
+    <iron-swipeable-pages id="ironCarousel" selected="0" height="300px" width="100%">
+      <shop-image data-type="search" src="/images/promos/save-on-tvs2.jpg" placeholderimg="/images/promos/save-on-tvs2-small.jpg" on-tap="tappedItem" alt="deals"></shop-image>
+      <shop-image data-type="search" src="/images/promos/save-on-tvs.jpg" placeholderimg="/images/promos/save-on-tvs-small.jpg" on-tap="tappedItem" alt="deals"></shop-image>
+    </iron-swipeable-pages>
+      
+      
+      
+      
+      
+    
+
+    
+
+    
+      
+      
+      
+      
+      
+      
+      
+    
+    
+    <template is="dom-repeat" items="[[categories]]" strip-whitespace="">
+      <div class="item">
+          <shop-image data-type="search" data-action="[[item.title]]" on-tap="tappedItem" src="[[item.image]]" alt="[[item.title]]" placeholder-img="[[item.placeholder]]"></shop-image>
+        <shop-button>
+          <h2 alt="[[item.title]]" data-type="search" on-tap="tappedItem">Shop [[item.title]]</h2>
+        </shop-button>
+      </div>
+    </template>
+    
+
+  </template>
+
+  <script>Polymer({is:"shop-home",properties:{appActionType:{type:String,value:"pdp"},appActionData:{type:String,value:"tvs"},categories:{type:Array},visible:{type:Boolean,observer:"_visibleChanged"}},behaviors:[Polymer.AppLocalizeBehavior],observers:["onQueryChange(query)"],tappedItem:function(e){var t=Polymer.dom(e).localTarget.alt,a=Polymer.dom(e).localTarget.getAttribute("data-type");try{webkit.messageHandlers.messageReciever.postMessage({actionType:a,actionData:t})}catch(e){console.log('The native context does not exist yet:\nType: "'+a+'", Data: "'+t+'"')}},onQueryChange:function(e,t){var a=e.split("lang=")[1]?e.split("lang=")[1].split("&")[0]:this.language;"en"!==a&&"fr"!==a||(this.language=a)},_visibleChanged:function(e){e&&this.fire("change-section",{title:"Home"})}});</script>
+
+</dom-module>
+</body></html>
