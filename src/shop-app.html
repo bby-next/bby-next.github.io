@@ -287,64 +287,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         num-items="{{numItems}}"
         total="{{total}}"></shop-cart-data>
 
-    <!--<app-header role="navigation" id="header" effects="waterfall" condenses reveals>-->
-      <!--<app-toolbar>-->
-        <!--<div class="left-bar-item">-->
-          <!--<paper-icon-button-->
-              <!--class="menu-btn"-->
-              <!--icon="menu"-->
-              <!--on-click="_toggleDrawer"-->
-              <!--aria-label="Categories">-->
-          <!--</paper-icon-button>-->
-          <!--<a class="back-btn" href="/list/[[categoryName]]" tabindex="-1">-->
-            <!--<paper-icon-button icon="arrow-back" aria-label="Go back"></paper-icon-button>-->
-          <!--</a>-->
-        <!--</div>-->
-
-        <!--<div class="logo" title="">-->
-          <!--<a href="/" aria-label="Best Buy Canada Home">-->
-            <!--<img src="/images/logo.svg" height="44" alt="Best Buy Canada">-->
-          <!--</a>-->
-        <!--</div>-->
-
-        <!--<div class="right-bar-item">-->
-          <!--<paper-toggle-button on-change="_toggleLang" id="switch">EN / FR</paper-toggle-button>-->
-
-          <!--<div class="cart-btn-container">-->
-            <!--<a href="/cart" tabindex="-1">-->
-              <!--<paper-icon-button icon="shopping-cart" aria-label$="Shopping cart: [[_computePluralizedQuantity(numItems)]]"></paper-icon-button>-->
-            <!--</a>-->
-            <!--<div class="cart-badge" aria-hidden="true" hidden$="[[!numItems]]">[[numItems]]</div>-->
-          <!--</div>-->
-        <!--</div>-->
-      <!--</app-toolbar>-->
-
-      <!--&lt;!&ndash; Lazy-create the tabs for larger screen sizes. &ndash;&gt;-->
-      <!--<div id="tabContainer" sticky$="[[_shouldShowTabs]]" hidden$="[[!_shouldShowTabs]]">-->
-        <!--<template is="dom-if" if="[[_shouldRenderTabs]]">-->
-          <!--<paper-tabs selected="[[categoryName]]" attr-for-selected="name" scrollable noink>-->
-            <!--<template is="dom-repeat" items="[[categories]]" as="category" initial-count="4">-->
-            <!--<paper-tab name="[[category.name]]">-->
-                  <!--<a href="/list/[[category.name]]">{{localize(category.name)}}</a>-->
-                <!--</paper-tab>-->
-              <!--</template>-->
-          <!--</paper-tabs>-->
-        <!--</template>-->
-      <!--</div>-->
-    <!--</app-header>-->
-
-    <!-- Lazy-create the drawer for small screen sizes. -->
-    <template is="dom-if" if="[[_shouldRenderDrawer]]">
-      <!-- Two-way bind `drawerOpened` since app-drawer can update `opened` itself. -->
-      <app-drawer opened="{{drawerOpened}}" swipe-open tabindex="0">
-        <iron-selector role="navigation" class="drawer-list" selected="[[categoryName]]" attr-for-selected="name">
-          <template is="dom-repeat" items="[[categories]]" as="category" initial-count="4">
-            <a name="[[category.name]]" href="/list/[[category.name]]">[[category.title]]</a>
-          </template>
-        </iron-selector>
-      </app-drawer>
-    </template>
-
     <iron-pages role="main" selected="[[page]]" attr-for-selected="name" selected-attribute="visible">
       <!-- home view -->
       <shop-home name="home" categories="[[categories]]" language="{{language}}"></shop-home>

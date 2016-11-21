@@ -1292,64 +1292,6 @@ delete this[t])},_configureProperties:function(e,t){for(var n in e){var r=e[n];i
     
     <shop-cart-data id="cart" cart="{{cart}}" num-items="{{numItems}}" total="{{total}}"></shop-cart-data>
 
-    
-      
-        
-          
-              
-              
-              
-              
-          
-          
-            
-          
-        
-
-        
-          
-            
-          
-        
-
-        
-          
-
-          
-            
-              
-            
-            
-          
-        
-      
-
-      
-      
-        
-          
-            
-            
-                  
-                
-              
-          
-        
-      
-    
-
-    
-    <template is="dom-if" if="[[_shouldRenderDrawer]]">
-      
-      <app-drawer opened="{{drawerOpened}}" swipe-open="" tabindex="0">
-        <iron-selector role="navigation" class="drawer-list" selected="[[categoryName]]" attr-for-selected="name">
-          <template is="dom-repeat" items="[[categories]]" as="category" initial-count="4">
-            <a name="[[category.name]]" href="/list/[[category.name]]">[[category.title]]</a>
-          </template>
-        </iron-selector>
-      </app-drawer>
-    </template>
-
     <iron-pages role="main" selected="[[page]]" attr-for-selected="name" selected-attribute="visible">
       
       <shop-home name="home" categories="[[categories]]" language="{{language}}"></shop-home>
