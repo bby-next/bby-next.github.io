@@ -48,7 +48,7 @@
         display: block;
         text-decoration: none;
         text-align: center;
-        margin-bottom: 40px;
+        /*margin-bottom: 40px;*/
       }
 
       .item:nth-of-type(3),
@@ -133,35 +133,16 @@
     </style>
 
     
-    <iron-swipeable-pages id="ironCarousel" selected="0" height="300px" width="100%">
-      <shop-image data-type="search" src="/images/promos/save-on-tvs2.jpg" placeholderimg="/images/promos/save-on-tvs2-small.jpg" on-tap="tappedItem" alt="deals"></shop-image>
-      <shop-image data-type="search" src="/images/promos/save-on-tvs.jpg" placeholderimg="/images/promos/save-on-tvs-small.jpg" on-tap="tappedItem" alt="deals"></shop-image>
-    </iron-swipeable-pages>
-      
-      
-      
       
       
     
 
-    
-
-    
-      
-      
-      
-      
-      
-      
-      
-    
-    
     <template is="dom-repeat" items="[[categories]]" strip-whitespace="">
       <div class="item">
           <shop-image data-type="search" data-action="[[item.title]]" on-tap="tappedItem" src="[[item.image]]" alt="[[item.title]]" placeholder-img="[[item.placeholder]]"></shop-image>
-        <shop-button>
-          <h2 alt="[[item.title]]" data-type="search" on-tap="tappedItem">Shop [[item.title]]</h2>
-        </shop-button>
+        
+          
+        
       </div>
     </template>
     

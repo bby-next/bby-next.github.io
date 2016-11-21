@@ -2,62 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="426cc7a3-9a7e-4268-9f79-786de7472313" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/promos/buttons.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/promos/dotd.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/promos/icon.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/promos/save-on-laptops.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/promos/save-on-tvs.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/promos/save-on-tvs2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/promos/slice1-en.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/promos/slice1-fr.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/promos/slice2-en.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/promos/slice2-fr.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/promos/slice3-en.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/promos/slice3-fr.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/promos/slice4-en.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/promos/slice4-fr.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/promos/slice5-en.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/promos/slice5-fr.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/promos/weekly-shop-now.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower.json" afterPath="$PROJECT_DIR$/bower.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/app-layout/.bower.json" afterPath="$PROJECT_DIR$/bower_components/app-layout/.bower.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/app-layout/.travis.yml" afterPath="$PROJECT_DIR$/bower_components/app-layout/.travis.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/app-layout/README.md" afterPath="$PROJECT_DIR$/bower_components/app-layout/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/app-layout/app-drawer/app-drawer.html" afterPath="$PROJECT_DIR$/bower_components/app-layout/app-drawer/app-drawer.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/app-layout/app-drawer/test/app-drawer.html" afterPath="$PROJECT_DIR$/bower_components/app-layout/app-drawer/test/app-drawer.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/app-layout/app-header-layout/app-header-layout.html" afterPath="$PROJECT_DIR$/bower_components/app-layout/app-header-layout/app-header-layout.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/app-layout/app-header-layout/test/app-header-layout.html" afterPath="$PROJECT_DIR$/bower_components/app-layout/app-header-layout/test/app-header-layout.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/app-layout/app-header/app-header.html" afterPath="$PROJECT_DIR$/bower_components/app-layout/app-header/app-header.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/app-layout/bower.json" afterPath="$PROJECT_DIR$/bower_components/app-layout/bower.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/app-layout/templates/getting-started/bower.json" afterPath="$PROJECT_DIR$/bower_components/app-layout/templates/getting-started/bower.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/app-layout/templates/landing-page/bower.json" afterPath="$PROJECT_DIR$/bower_components/app-layout/templates/landing-page/bower.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/app-layout/templates/pesto/bower.json" afterPath="$PROJECT_DIR$/bower_components/app-layout/templates/pesto/bower.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/app-layout/templates/shrine/bower.json" afterPath="$PROJECT_DIR$/bower_components/app-layout/templates/shrine/bower.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/app-layout/templates/shrine/src/shrine-app.html" afterPath="$PROJECT_DIR$/bower_components/app-layout/templates/shrine/src/shrine-app.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/app-layout/templates/shrine/src/shrine-detail.html" afterPath="$PROJECT_DIR$/bower_components/app-layout/templates/shrine/src/shrine-detail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/app-layout/templates/shrine/src/shrine-featured-item.html" afterPath="$PROJECT_DIR$/bower_components/app-layout/templates/shrine/src/shrine-featured-item.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/app-layout/templates/shrine/src/shrine-item.html" afterPath="$PROJECT_DIR$/bower_components/app-layout/templates/shrine/src/shrine-item.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/app-layout/templates/shrine/src/shrine-list.html" afterPath="$PROJECT_DIR$/bower_components/app-layout/templates/shrine/src/shrine-list.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/app-layout/templates/test-drive/bower.json" afterPath="$PROJECT_DIR$/bower_components/app-layout/templates/test-drive/bower.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/app-route/.bower.json" afterPath="$PROJECT_DIR$/bower_components/app-route/.bower.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/app-route/.travis.yml" afterPath="$PROJECT_DIR$/bower_components/app-route/.travis.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/app-route/README.md" afterPath="$PROJECT_DIR$/bower_components/app-route/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/app-route/app-location.html" afterPath="$PROJECT_DIR$/bower_components/app-route/app-location.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/app-route/app-route-converter-behavior.html" afterPath="$PROJECT_DIR$/bower_components/app-route/app-route-converter-behavior.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/app-route/app-route-converter.html" afterPath="$PROJECT_DIR$/bower_components/app-route/app-route-converter.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/app-route/app-route.html" afterPath="$PROJECT_DIR$/bower_components/app-route/app-route.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/app-route/bower.json" afterPath="$PROJECT_DIR$/bower_components/app-route/bower.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/app-route/demo/data-loading-demo/flickr-search-demo.html" afterPath="$PROJECT_DIR$/bower_components/app-route/demo/data-loading-demo/flickr-search-demo.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/app-route/test/index.html" afterPath="$PROJECT_DIR$/bower_components/app-route/test/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/iron-a11y-keys-behavior/.bower.json" afterPath="$PROJECT_DIR$/bower_components/iron-a11y-keys-behavior/.bower.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/iron-flex-layout/.bower.json" afterPath="$PROJECT_DIR$/bower_components/iron-flex-layout/.bower.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/iron-icon/.bower.json" afterPath="$PROJECT_DIR$/bower_components/iron-icon/.bower.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/iron-iconset-svg/.bower.json" afterPath="$PROJECT_DIR$/bower_components/iron-iconset-svg/.bower.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/iron-meta/.bower.json" afterPath="$PROJECT_DIR$/bower_components/iron-meta/.bower.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/iron-selector/.bower.json" afterPath="$PROJECT_DIR$/bower_components/iron-selector/.bower.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/paper-icon-button/.bower.json" afterPath="$PROJECT_DIR$/bower_components/paper-icon-button/.bower.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lazy-resources.html" afterPath="$PROJECT_DIR$/src/lazy-resources.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/shop-home.html" afterPath="$PROJECT_DIR$/src/shop-home.html" />
     </list>
     <ignored path="bby-next.github.io.iws" />
@@ -84,8 +28,8 @@
       <file leaf-file-name="shop-home.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/shop-home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="555">
-              <caret line="146" column="6" selection-start-line="146" selection-start-column="6" selection-end-line="146" selection-end-column="6" />
+            <state relative-caret-position="525">
+              <caret line="144" column="4" selection-start-line="144" selection-start-column="8" selection-end-line="147" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -137,10 +81,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-3840" />
-    <option name="y" value="23" />
+    <option name="y" value="-1080" />
     <option name="width" value="1920" />
-    <option name="height" value="1057" />
+    <option name="height" value="1080" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -242,6 +185,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
+    <property name="FullScreen" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -315,15 +259,15 @@
       <workItem from="1478917435739" duration="1000000" />
       <workItem from="1479079480797" duration="710000" />
       <workItem from="1479148309574" duration="526000" />
-      <workItem from="1479268910948" duration="7434000" />
+      <workItem from="1479268910948" duration="8539000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15808000" />
+    <option name="totallyTimeSpent" value="16913000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-3840" y="23" width="1920" height="1057" extended-state="6" />
+    <frame x="0" y="-1080" width="1920" height="1080" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1953125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -332,7 +276,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15080972" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14424008" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -732,8 +676,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/shop-home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="146" column="6" selection-start-line="146" selection-start-column="6" selection-end-line="146" selection-end-column="6" />
+        <state relative-caret-position="525">
+          <caret line="144" column="4" selection-start-line="144" selection-start-column="8" selection-end-line="147" selection-end-column="14" />
           <folding />
         </state>
       </provider>

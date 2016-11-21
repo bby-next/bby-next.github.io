@@ -58,7 +58,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         display: block;
         text-decoration: none;
         text-align: center;
-        margin-bottom: 40px;
+        /*margin-bottom: 40px;*/
       }
 
       .item:nth-of-type(3),
@@ -142,37 +142,18 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     </style>
 
-    <!--<div class="container">-->
-    <iron-swipeable-pages id="ironCarousel" selected="0" height="300px" width="100%">
-      <shop-image  data-type="search" src="/images/promos/save-on-tvs2.jpg" placeholderImg="/images/promos/save-on-tvs2-small.jpg" on-tap="tappedItem" alt="deals"></shop-image>
-      <shop-image  data-type="search" src="/images/promos/save-on-tvs.jpg" placeholderImg="/images/promos/save-on-tvs-small.jpg" on-tap="tappedItem" alt="deals"></shop-image>
-    </iron-swipeable-pages>
-      <!--<shop-image  data-type="search" sizing="contain" preload fade src="/images/promos/save-on-tvs.jpg" on-tap="tappedItem" alt="deals"></shop-image>-->
-      <!--<shop-image  data-type="search" sizing="contain" preload fade src="{{localize('slice2')}}" on-tap="tappedItem" alt="gifts"></shop-image>-->
-      <!--<shop-image  data-type="search" sizing="contain" preload fade src="{{localize('slice3')}}" on-tap="tappedItem" alt="outlet"></shop-image>-->
-      <!--<shop-image  data-type="web" sizing="contain" preload fade src="{{localize('slice4')}}" on-tap="tappedItem" alt="{{localize('flyer')}}"></shop-image>-->
-      <!--<shop-image  data-type="web" sizing="contain" preload fade src="{{localize('slice5')}}" on-tap="tappedItem" alt="{{localize('blog')}}"></shop-image>-->
+    <!--<div class="item">-->
+      <!--<shop-image  data-type="search" src="/images/promos/save-on-tvs2.jpg" placeholderImg="/images/promos/save-on-tvs2-small.jpeg" on-tap="tappedItem" alt="tv"></shop-image>-->
+      <!--<shop-image  data-type="web" src="/images/promos/bf-flyer-en_mobile.jpg" placeholderImg="/images/promos/bf-flyer-en_mobile-placeholder.jpeg" on-tap="tappedItem" alt="flyer"></shop-image>-->
     <!--</div>-->
 
-    <!--<h2>Promo</h2>-->
-
-    <!--<div class="container">-->
-      <!--<img  data-type="search" src="/images/promos/slice1-en.png" alt="deals">-->
-      <!--<img  data-type="search" src="/images/promos/slice2-en.png" alt="deals">-->
-      <!--<img  data-type="search" src="/images/promos/slice2-en.png" alt="deals">-->
-      <!--<img  data-type="search" src="/images/promos/slice2-en.png" alt="deals">-->
-      <!--<img  data-type="search" src="/images/promos/slice2-en.png" alt="deals">-->
-      <!--<img  data-type="search" src="/images/promos/slice2-en.png" alt="deals">-->
-      <!--<img  data-type="search" src="/images/promos/slice2-en.png" alt="deals">-->
-    <!--</div>-->
-    <!--<iron-swipeable-pages id="ironCarousel" selected="0">-->
     <template is="dom-repeat" items="[[categories]]" strip-whitespace>
       <div class="item">
           <shop-image data-type="search" data-action="[[item.title]]" on-tap="tappedItem"
                       src="[[item.image]]" alt="[[item.title]]" placeholder-img="[[item.placeholder]]"></shop-image>
-        <shop-button>
-          <h2 alt="[[item.title]]" data-type="search" on-tap="tappedItem">Shop [[item.title]]</h2>
-        </shop-button>
+        <!--<shop-button>-->
+          <!--<h2 alt="[[item.title]]" data-type="search" on-tap="tappedItem">Shop [[item.title]]</h2>-->
+        <!--</shop-button>-->
       </div>
     </template>
     <!--</iron-swipeable-pages>-->
